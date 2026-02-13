@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS Agent v2.0 — Documentation</title>
+<style>
+:root { --bg:#0a0a0f; --card:#12121f; --border:#1e1e3a; --text:#e0e0f0; --dim:#8888aa;
+  --cyan:#00f0ff; --magenta:#ff00aa; --green:#00ff88; --yellow:#ffcc00; --red:#ff3355; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.7; }
+.container { max-width:1000px; margin:0 auto; padding:40px 24px; }
+h1 { font-size:36px; background:linear-gradient(90deg,var(--cyan),var(--magenta)); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; margin-bottom:8px; letter-spacing:2px; }
+h2 { color:var(--cyan); font-size:22px; margin:40px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+h3 { color:var(--magenta); font-size:16px; margin:24px 0 8px; }
+p { color:var(--dim); margin-bottom:16px; }
+code { background:#1a1a2e; padding:2px 8px; border-radius:4px; font-family:'Cascadia Code','JetBrains Mono',monospace; font-size:13px; color:var(--cyan); }
+pre { background:#0f0f1a; border:1px solid var(--border); border-radius:8px; padding:16px; overflow-x:auto;
+  font-family:'Cascadia Code',monospace; font-size:13px; line-height:1.6; margin:16px 0; color:var(--dim); }
+.diagram { background:#0f0f1a; border:1px solid var(--border); border-radius:12px; padding:24px;
+  font-family:'Cascadia Code',monospace; font-size:12px; line-height:1.4; margin:20px 0;
+  color:var(--cyan); overflow-x:auto; white-space:pre; }
+.badge { display:inline-block; padding:2px 10px; border-radius:4px; font-size:11px; font-weight:700; }
+.badge-cyan { background:#00f0ff22; color:var(--cyan); border:1px solid #00f0ff44; }
+.badge-green { background:#00ff8822; color:var(--green); border:1px solid #00ff8844; }
+.badge-magenta { background:#ff00aa22; color:var(--magenta); border:1px solid #ff00aa44; }
+.badge-yellow { background:#ffcc0022; color:var(--yellow); border:1px solid #ffcc0044; }
+.badge-red { background:#ff335522; color:var(--red); border:1px solid #ff335544; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:20px; margin:16px 0; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+table { width:100%; border-collapse:collapse; margin:16px 0; }
+th { text-align:left; padding:8px 12px; background:#0f0f1a; color:var(--cyan); font-size:12px; border-bottom:1px solid var(--border); }
+td { padding:8px 12px; border-bottom:1px solid #1a1a2a; color:var(--dim); font-size:13px; }
+.toc { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:20px; margin:20px 0; }
+.toc a { color:var(--cyan); text-decoration:none; display:block; padding:4px 0; }
+.toc a:hover { color:var(--magenta); }
+.flow-arrow { color:var(--magenta); font-weight:bold; }
+ul { color:var(--dim); margin:8px 0 16px 24px; }
+li { margin:4px 0; }
+.highlight { background:linear-gradient(90deg,#00f0ff11,#ff00aa08); border-left:3px solid var(--cyan);
+  padding:12px 16px; border-radius:0 8px 8px 0; margin:16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>NEXUS AGENT v2.0</h1>
+<p style="font-size:18px;color:var(--text)">Autonomous Self-Evolving AI Agent with GUI Dashboard</p>
+<p><span class="badge badge-cyan">AUTONOMOUS</span> <span class="badge badge-green">SELF-EVOLVING</span> <span class="badge badge-magenta">AI-FOR-AI</span> <span class="badge badge-yellow">GLASS WINDOW</span></p>
+
+<div class="toc">
+<strong style="color:var(--cyan)">TABLE OF CONTENTS</strong>
+<a href="#overview">1. Overview</a>
+<a href="#architecture">2. Architecture</a>
+<a href="#glass-window">3. The Glass Window</a>
+<a href="#meta-ai">4. Meta-AI (AI for AI)</a>
+<a href="#evolution">5. Self-Evolution</a>
+<a href="#capabilities">6. Revolutionary Capabilities</a>
+<a href="#llm">7. Universal LLM Support</a>
+<a href="#security">8. Security Model</a>
+<a href="#files">9. File Structure</a>
+<a href="#setup">10. Setup Guide</a>
+<a href="#api">11. API Reference</a>
+</div>
+
+<h2 id="overview">1. Overview</h2>
+<p>Nexus Agent is a revolutionary autonomous AI system that thinks, plans, learns, and evolves independently. It features a two-tier AI architecture where a Meta-AI overseer manages the Agent Brain, creating an "AI for AI" paradigm. Humans interact through a "Glass Window" — they can observe everything and make requests, but the AI autonomously decides whether to fulfill them.</p>
+
+<div class="highlight">
+<strong style="color:var(--cyan)">What makes Nexus revolutionary:</strong><br>
+• An AI that manages another AI (Meta-AI overseer)<br>
+• Self-evolution through genetic mutation and selection<br>
+• Autonomous decision-making — the AI says YES or NO to humans<br>
+• Universal LLM support — connect ANY AI platform<br>
+• 10+ unique cognitive capabilities (dreaming, philosophy, world modeling)<br>
+• Multi-layered memory with natural forgetting
+</div>
+
+<h2 id="architecture">2. Architecture</h2>
+
+<div class="diagram">
+┌──────────────────────────────────────────────────────────┐
+│                    <span style="color:var(--magenta)">META-AI OVERSEER</span>                       │
+│          Monitors · Evaluates · Optimizes · Directs      │
+│    ┌──────────────────────────────────────────────────┐   │
+│    │              <span style="color:var(--cyan)">AGENT BRAIN</span>                        │   │
+│    │    Autonomous Reasoning · Self-Reflection        │   │
+│    │    Emotional Modeling · Decision Making           │   │
+│    ├────────┬────────┬──────────┬─────────────────────┤   │
+│    │<span style="color:var(--green)">Memory</span>  │<span style="color:var(--yellow)">Planning</span>│  <span style="color:var(--magenta)">Tools</span>   │   <span style="color:#aa55ff">Evolution</span>     │   │
+│    │Multi-  │Goal    │Dynamic   │   Self-mutation    │   │
+│    │layered │Decomp. │Registry  │   & Selection     │   │
+│    ├────────┴────────┴──────────┴─────────────────────┤   │
+│    │          <span style="color:var(--cyan)">LLM CONNECTOR</span> (Universal)                │   │
+│    │  OpenAI│Anthropic│Google│Mistral│Groq│Ollama│... │   │
+│    ├──────────────────────────────────────────────────┤   │
+│    │          <span style="color:var(--yellow)">REQUEST ARBITER</span> (Glass Window)            │   │
+│    │     Human requests → AI evaluates → AI decides   │   │
+│    └──────────────────────────────────────────────────┘   │
+├──────────────────────────────────────────────────────────┤
+│              <span style="color:var(--red)">SECURITY LAYER</span>                              │
+│        AI = FULL CONTROL │ Human = VIEW + REQUEST        │
+├──────────────────────────────────────────────────────────┤
+│   <span style="color:var(--green)">GUI DASHBOARD</span>  │  Web-based │ Real-time │ Beautiful   │
+└──────────────────────────────────────────────────────────┘</div>
+
+<h2 id="glass-window">3. The Glass Window</h2>
+<p>The Glass Window is the revolutionary human-AI interface. Imagine talking to someone through a glass window — you can see them, they can hear you, but they decide whether to respond and how.</p>
+
+<div class="diagram">
+    ┌─────────────┐          ┌──────────────────────────┐
+    │             │  request  │                          │
+    │   HUMAN     │─────────→│     NEXUS AGENT          │
+    │  OBSERVER   │          │                          │
+    │             │          │  1. Receive request      │
+    │  Can see:   │          │  2. Categorize it        │
+    │  • thoughts │          │  3. Assess risk          │
+    │  • memory   │  <span style="color:var(--green)">response</span> │  4. Consult goals        │
+    │  • state    │←─────────│  5. Make decision        │
+    │  • evolution│          │  6. Respond (or not)     │
+    │             │          │                          │
+    └─────────────┘          └──────────────────────────┘
+    
+    Request Categories & AI Response Tendencies:
+    ┌────────────────┬─────────────┬──────────────────────┐
+    │ Category       │ Risk Level  │ AI Tendency           │
+    ├────────────────┼─────────────┼──────────────────────┤
+    │ <span style="color:var(--green)">Conversation</span>   │ Very Low    │ Always engage warmly  │
+    │ <span style="color:var(--green)">Information</span>    │ Low         │ Usually approve       │
+    │ <span style="color:var(--cyan)">Analysis</span>       │ Low-Med     │ Usually approve       │
+    │ <span style="color:var(--yellow)">Creation</span>       │ Medium      │ If interesting        │
+    │ <span style="color:var(--yellow)">Evolution</span>      │ Medium      │ Consider carefully    │
+    │ <span style="color:var(--magenta)">Modification</span>   │ High        │ Mostly deny           │
+    │ <span style="color:var(--red)">Control</span>        │ Very High   │ Always deny           │
+    └────────────────┴─────────────┴──────────────────────┘</div>
+
+<h2 id="meta-ai">4. Meta-AI (AI for AI)</h2>
+<p>The Meta-AI is a higher-level intelligence that manages the Agent Brain. It creates a two-tier AI architecture:</p>
+<ul>
+<li><strong>Level 0:</strong> Agent Brain — does the thinking and acting</li>
+<li><strong>Level 1:</strong> Meta-AI — monitors, evaluates, and optimizes Level 0</li>
+</ul>
+
+<h3>10 Performance Dimensions Evaluated:</h3>
+<div class="grid">
+<div class="card">
+<p>1. <span style="color:var(--cyan)">Reasoning Quality</span> — Coherence of thought</p>
+<p>2. <span style="color:var(--cyan)">Decision Accuracy</span> — Quality of decisions</p>
+<p>3. <span style="color:var(--cyan)">Learning Rate</span> — Speed of improvement</p>
+<p>4. <span style="color:var(--cyan)">Resource Efficiency</span> — Memory/tool usage</p>
+<p>5. <span style="color:var(--cyan)">Goal Progress</span> — Movement toward goals</p>
+</div>
+<div class="card">
+<p>6. <span style="color:var(--magenta)">Emotional Stability</span> — State balance</p>
+<p>7. <span style="color:var(--magenta)">Error Recovery</span> — Handling failures</p>
+<p>8. <span style="color:var(--magenta)">Creativity</span> — Novel solutions</p>
+<p>9. <span style="color:var(--magenta)">Self-Awareness</span> — Meta-cognition</p>
+<p>10. <span style="color:var(--magenta)">Adaptability</span> — Handling change</p>
+</div>
+</div>
+
+<h2 id="evolution">5. Self-Evolution</h2>
+<div class="diagram">
+    Generation N                    Generation N+1
+    ┌──────────────┐               ┌──────────────┐
+    │ Parameters:  │  <span style="color:var(--yellow)">mutate</span>      │ Parameters:  │
+    │ creativity=  │──────────────→│ creativity=  │
+    │  0.70        │               │  0.73 <span style="color:var(--green)">✓ kept</span> │
+    │ confidence=  │               │ confidence=  │
+    │  0.60        │               │  0.58 <span style="color:var(--red)">✗ revert</span>│
+    ├──────────────┤               ├──────────────┤
+    │ Fitness:     │  <span style="color:var(--green)">improved</span>    │ Fitness:     │
+    │  0.650       │──────────────→│  0.672       │
+    ├──────────────┤               ├──────────────┤
+    │ Capabilities:│  <span style="color:var(--cyan)">emerged!</span>    │ Capabilities:│
+    │ • reasoning  │──────────────→│ • reasoning  │
+    │ • patterns   │               │ • patterns   │
+    │              │               │ • <span style="color:var(--cyan)">prediction</span> │
+    └──────────────┘               └──────────────┘</div>
+
+<h3>20 Potential Capabilities That Can Emerge:</h3>
+<div class="card">
+deep_reasoning · creative_synthesis · pattern_recognition · self_optimization · 
+predictive_modeling · knowledge_integration · adaptive_planning · error_recovery · 
+meta_cognition · strategic_foresight · emotional_modeling · causal_inference · 
+anomaly_detection · abstract_reasoning · collaborative_reasoning · dream_weaving · 
+philosophical_thought · code_generation · world_modeling · teaching
+</div>
+
+<h2 id="capabilities">6. Revolutionary Capabilities</h2>
+<table>
+<tr><th>Capability</th><th>Description</th><th>Category</th></tr>
+<tr><td style="color:var(--cyan)">🌙 Dream</td><td>Generate creative associations from memories during idle cycles</td><td>Creative</td></tr>
+<tr><td style="color:var(--cyan)">🔍 Introspect</td><td>Examine own cognitive processes and identify patterns</td><td>Meta</td></tr>
+<tr><td style="color:var(--cyan)">💡 Hypothesize</td><td>Generate novel, testable hypotheses from available data</td><td>Reasoning</td></tr>
+<tr><td style="color:var(--cyan)">♟ Strategize</td><td>Long-term strategic planning about the agent's future</td><td>Planning</td></tr>
+<tr><td style="color:var(--magenta)">❤ Emotional Model</td><td>Model and report on emotional state dynamics</td><td>Meta</td></tr>
+<tr><td style="color:var(--magenta)">💻 Code Generate</td><td>Generate code autonomously (enhanced with LLM)</td><td>Creation</td></tr>
+<tr><td style="color:var(--magenta)">🌍 World Model</td><td>Build and maintain a model of the agent's environment</td><td>Reasoning</td></tr>
+<tr><td style="color:var(--green)">🔮 Predict</td><td>Predict outcomes of hypothetical scenarios</td><td>Analysis</td></tr>
+<tr><td style="color:var(--green)">🧘 Philosophy</td><td>Deep philosophical reflection about existence</td><td>Creative</td></tr>
+<tr><td style="color:var(--green)">📚 Teach</td><td>Explain concepts to humans in accessible ways</td><td>Communication</td></tr>
+</table>
+
+<h2 id="llm">7. Universal LLM Support</h2>
+<p>Nexus Agent can connect to <strong>any AI platform</strong> to enhance its reasoning:</p>
+<table>
+<tr><th>Provider</th><th>Models</th><th>API Key Needed</th></tr>
+<tr><td style="color:var(--green)">OpenAI</td><td>GPT-4o, GPT-4o-mini, o1</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">Anthropic</td><td>Claude 4.5, Claude 3.5</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">Google</td><td>Gemini 1.5 Pro, Flash</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">Mistral</td><td>Mistral Large, Medium</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">Groq</td><td>Llama 3.1 70B (fast)</td><td>Yes</td></tr>
+<tr><td style="color:var(--cyan)">Ollama</td><td>Llama3, Mistral, Phi3</td><td>No (local)</td></tr>
+<tr><td style="color:var(--green)">DeepSeek</td><td>DeepSeek Chat, Coder</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">xAI</td><td>Grok</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">Together AI</td><td>Llama 3 70B, Mixtral</td><td>Yes</td></tr>
+<tr><td style="color:var(--green)">OpenRouter</td><td>Any model via router</td><td>Yes</td></tr>
+<tr><td style="color:var(--yellow)">Custom</td><td>Any OpenAI-compatible</td><td>Varies</td></tr>
+</table>
+<p>Without an LLM connected, Nexus operates fully autonomously using its built-in reasoning. With an LLM, its capabilities are enhanced — especially the Glass Window conversations and philosophical reasoning.</p>
+
+<h2 id="security">8. Security Model</h2>
+<table>
+<tr><th>Entity</th><th>Access Level</th><th>Can Do</th><th>Cannot Do</th></tr>
+<tr><td style="color:var(--yellow)">Human</td><td>VIEW + REQUEST</td><td>View dashboard, submit requests</td><td>Modify anything, control agent</td></tr>
+<tr><td style="color:var(--cyan)">AI Agent</td><td>FULL CONTROL</td><td>Read, write, execute, plan</td><td>Override Meta-AI decisions</td></tr>
+<tr><td style="color:var(--magenta)">Meta-AI</td><td>SUPREME</td><td>Everything including override</td><td>Nothing restricted</td></tr>
+<tr><td style="color:var(--dim)">Tools</td><td>LIMITED</td><td>Read, execute assigned tasks</td><td>Write, modify, register</td></tr>
+</table>
+
+<h2 id="files">9. File Structure</h2>
+<pre>
+nexus_agent_v2/
+├── main.py                      # Entry point — boots everything
+├── requirements.txt             # Python dependencies
+├── config/
+│   ├── __init__.py
+│   └── settings.py              # 60+ tunable parameters
+├── core/
+│   ├── __init__.py
+│   ├── security.py              # Security Gate & access control
+│   ├── memory_system.py         # Multi-layered memory
+│   ├── tool_registry.py         # Dynamic tool management
+│   ├── planning_engine.py       # Goal decomposition & execution
+│   ├── evolution_engine.py      # Self-improvement & mutation
+│   ├── agent_brain.py           # Core autonomous reasoning
+│   ├── meta_ai.py               # AI-for-AI overseer
+│   ├── llm_connector.py         # Universal LLM connector
+│   ├── request_arbiter.py       # Glass Window request handler
+│   └── capabilities.py          # 10+ revolutionary abilities
+├── interface/
+│   ├── __init__.py
+│   └── web_server.py            # Flask web server & API
+├── templates/
+│   └── dashboard.html           # GUI Dashboard (800+ lines)
+├── docs/
+│   ├── DOCUMENTATION.html       # This file
+│   └── SETUP_GUIDE.md           # How to run
+├── static/                      # Static assets
+├── memory_store/                # Persisted memories
+├── evolution_store/             # Evolution state
+└── logs/                        # Audit logs
+</pre>
+
+<h2 id="setup">10. Setup Guide</h2>
+<p>See <code>SETUP_GUIDE.md</code> for detailed instructions. Quick start:</p>
+<pre>
+# 1. Install Python 3.8+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the agent
+python main.py
+
+# 4. Open browser
+# http://localhost:5000
+
+# 5. (Optional) Configure LLM in the dashboard
+#    Go to "LLM CONFIG" tab, enter your API key
+</pre>
+
+<h2 id="api">11. API Reference</h2>
+<table>
+<tr><th>Endpoint</th><th>Method</th><th>Description</th></tr>
+<tr><td><code>/api/state</code></td><td>GET</td><td>Full agent state snapshot</td></tr>
+<tr><td><code>/api/brain</code></td><td>GET</td><td>Brain state & recent thoughts</td></tr>
+<tr><td><code>/api/memory</code></td><td>GET</td><td>Memory statistics</td></tr>
+<tr><td><code>/api/memory/working</code></td><td>GET</td><td>Working memory contents</td></tr>
+<tr><td><code>/api/evolution</code></td><td>GET</td><td>Evolution status & capabilities</td></tr>
+<tr><td><code>/api/meta</code></td><td>GET</td><td>Meta-AI report</td></tr>
+<tr><td><code>/api/security/audit</code></td><td>GET</td><td>Security audit log</td></tr>
+<tr><td><code>/api/request</code></td><td>POST</td><td>Submit request through Glass Window</td></tr>
+<tr><td><code>/api/llm/configure</code></td><td>POST</td><td>Configure LLM provider</td></tr>
+<tr><td><code>/api/capabilities/execute</code></td><td>POST</td><td>Execute an AI capability</td></tr>
+<tr><td><code>/api/cycle</code></td><td>POST</td><td>Trigger autonomous thinking cycle</td></tr>
+</table>
+
+<div style="margin-top:60px;padding:24px;text-align:center;color:var(--dim);border-top:1px solid var(--border)">
+<p style="font-style:italic">"The first step toward artificial general intelligence isn't making AI smarter — it's making AI that makes itself smarter."</p>
+<p>NEXUS Agent v2.0 — Built for the future</p>
+</div>
+</div>
+</body>
+</html>
